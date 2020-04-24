@@ -17,3 +17,5 @@ any issues- delete the node_modules folder and then run
 ./node_modules/.bin/selenium-standalone install
 ./node_modules/.bin/selenium-standalone start
 ./node_modules/.bin/wdio
+
+test
