@@ -1,25 +1,47 @@
-describe("verify if webdriver university links on homepage work correctly"), function () {
-    it("check that the contact us button opens the contact us page", function (done) {
-        return browser
-            .setViewportSize({ 
-                width: 1200, 
-                height: 800 
-            })
-            .url('http://webdriveruniversity.com/')
-            .getTitle().then(function (title) {
-                console.log('Title is: ' + title);
-            })
-            .click("#contact-us")
-            .pause(3000)
-    });
+describe("verify if webdriver university links on homepage work correctly", function () {
+     it("check that the contact us button opens the contact us page", function () {
+        browser.setViewportSize({
+            width: 1200,
+            height: 800
+        })
+        browser.url('/');
+        var title = browser.getTitle();
+        expect(title).to.equal('WebDriverUniversity.com');
+        console.log('Title is: ' + title);
+        
+        browser.click("#contact-us");
 
-    it("check that the login button opens the login portal page", function (done) {
-        return browser
-            .url('http://webdriveruniversity.com/')
-            .click('#login-portal')
-            .getTitle().then(function (title) {
-                console.log('Title is: ' + title);
-            })
-            .pause(3000)
-    });
-};
+        var tabIds = browser.getTabIds();
+        console.log('TabIds: ' + tabIds);
+       // browser.debug();
+        browser.switchTab(tabIds[1]);
+        var title2 = browser.getTitle();
+        expect(title2).to.equal('WebDriver | Contact Us');
+        console.log('title2 is: ' + title2)
+
+        var url = browser.getUrl();
+        expect(url).to.include('Contact-Us', 'URL Mismatch:');
+        browser.close;
+        browser.quit;
+    }); 
+
+     it("check that the contact us button opens the login portal page", function () {
+        browser.url('/');
+        var title = browser.getTitle();
+        title.should.equal('WebDriverUniversity.com');
+        console.log('Title is: ' + title);
+        browser.click('#login-portal');
+
+        var tabIds = browser.getTabIds();
+        console.log(tabIds);
+        browser.switchTab(tabIds[1]);
+
+        var title2 = browser.getTitle();
+        expect(title2).to.equal('WebDriver | Login Portal');
+
+        var url = browser.getUrl();
+        expect(url).to.include('Login-Portal1', 'URL Mismatch:');
+
+        browser.close;
+    }); 
+});

@@ -4,14 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "wdio"
   },
   "author": "Zoe Buck",
   "license": "ISC",
   "devDependencies": {
+    "chai": "^4.2.0",
     "mocha": "^7.1.1",
     "selenium-standalone": "^6.15.3",
     "wdio-mocha-framework": "^0.6.4",
+    "wdio-selenium-standalone-service": "0.0.12",
     "webdriverio": "^4.13.2"
   }
 }
