@@ -22,6 +22,7 @@ describe("verify if webdriver university links on homepage work correctly", func
         var url = browser.getUrl();
         expect(url).to.include('Contact-Us', 'URL Mismatch:');
         browser.close;
+        browser.quit;
     }); 
 
      it("check that the contact us button opens the login portal page", function () {
