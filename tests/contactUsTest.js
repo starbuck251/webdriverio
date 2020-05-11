@@ -31,7 +31,7 @@ describe('Test the contact us form', function () {
     }
 
      //  -------------- tests-------------------
-    it.only('should be able to submit a successful submission via contact us form', function (done) {
+    it('should be able to submit a successful submission via contact us form', function (done) {
         setFirstName('Joe');
         setLastName('Bloggs');
         setEmailAddress('Joe.smith@test.com');
