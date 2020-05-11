@@ -1,0 +1,10 @@
+{
+    "include": [
+      "**/*.js",
+      "**/*.json",
+      "node_modules/@wdio/sync",
+      "node_modules/@wdio/mocha-framework",
+      "node_modules/webdriverio",
+      "node_modules/@wdio/cucumber-framework"
+    ]
+  }
