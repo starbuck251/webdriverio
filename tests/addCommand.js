@@ -22,7 +22,6 @@ beforeEach(function () {
 
 describe('Test the contact us form', function () {
     var res = request('GET', 'https://jsonplaceholder.typicode.com/comments'); //this is an api call
-
     var contactUsDetails = JSON.parse(res.getBody().toString('utf8'));
 
 

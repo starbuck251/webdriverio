@@ -20,10 +20,11 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './tests/**/*.js'
+        './tests/*.js'
     ],
     // Patterns to exclude.
     exclude: [
+        './pageObjects/*_Page.js'
         // 'path/to/excluded/files'
     ],
     //
