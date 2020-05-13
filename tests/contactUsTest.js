@@ -21,19 +21,15 @@ describe('Test the contact us form', function () {
     });
 
     it('should not be able to submit as all fields required - first name missing', function (done) {
-        ContactUs_Page.setLastName('Bloggs');
-        ContactUs_PagesetEmailAddress('Joe.smith@test.com');
-        ContactUs_Page.setComments('hello world');
+        ContactUs_Page.submitAllInformationViaContactUsForm(null, 'Bloggs', 'Joe.smith@test.com', 'message');
         ContactUs_Page.clickSubmitButton();
-        confirmFailingSubmission();
+        ContactUs_Page.confirmFailingSubmission();
     });
 
     it('should not be able to submit as all fields required - last name missing', function (done) {
-        ContactUs_Page.setFirstName('Joe');
-        setEmailAddress('Joe.smith@test.com');
-        setComments('hello world');
-        clickSubmitButton();
-        confirmFailingSubmission();
+        ContactUs_Page.submitAllInformationViaContactUsForm('Joe', null, 'Joe.smith@test.com', 'message');
+        ContactUs_Page.clickSubmitButton();
+        ContactUs_Page.confirmFailingSubmission();
     });
 
 });

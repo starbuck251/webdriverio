@@ -136,7 +136,27 @@ exports.config = {
     // The only one supported by default is 'dot'
     // see also: http://webdriver.io/guide/reporters/dot.html
     // reporters: ['dot'],
-    //
+
+    //----- Timeline reporter - very nice-----
+    // install with: npm install --save wdio-timeline-reporter
+    // install with: npm install wdio-junit-reporter
+    // install with: npm install wdio-json-reporter@^0.4.0
+    reporters: ['dot', 'timeline', 'junit', 'json'],
+    reporterOptions: {
+        timelineReporter: {
+            outputDir: './reports/timeline-results/',
+            fileName: 'test-report.html',
+            embedImages: true
+        },
+        junit: {
+            outputDir: './reports/junit-results/',
+        },
+        json: {
+            outputDir: './reports/json-results/',
+        },
+    },
+    //----- Timeline reporter - very nice-----
+   
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
