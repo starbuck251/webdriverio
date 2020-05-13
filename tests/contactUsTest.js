@@ -8,33 +8,28 @@ describe('Test the contact us form', function () {
     
     //  -------------- tests-------------------
     it('should be able to submit a successful submission via contact us form', function (done) {
-        setFirstName('Joe');
-        setLastName('Bloggs');
-        setEmailAddress('Joe.smith@test.com');
-        setComments('message');
-        clickSubmitButton();
-        confirmSuccessfulSubmission();
+        ContactUs_Page.submitAllInformationViaContactUsForm('Joe', 'Bloggs', 'Joe.smith@test.com', 'message');
+        ContactUs_Page.clickSubmitButton();
+        ContactUs_Page.confirmSuccessfulSubmission();
     });
 
 
     it('should not be able to submit as all fields required - message missing', function (done) {
-        setFirstName('Joe');
-        setLastName('Bloggs');
-        setEmailAddress('Joe.smith@test.com');
-        clickSubmitButton();
-        confirmFailingSubmission();
+        ContactUs_Page.submitAllInformationViaContactUsForm('Joe', 'Bloggs', 'Joe.smith@test.com', null);
+        ContactUs_Page.clickSubmitButton();
+        ContactUs_Page.confirmFailingSubmission();
     });
 
     it('should not be able to submit as all fields required - first name missing', function (done) {
-        setLastName('Bloggs');
-        setEmailAddress('Joe.smith@test.com');
-        setComments('hello world');
-        clickSubmitButton();
+        ContactUs_Page.setLastName('Bloggs');
+        ContactUs_PagesetEmailAddress('Joe.smith@test.com');
+        ContactUs_Page.setComments('hello world');
+        ContactUs_Page.clickSubmitButton();
         confirmFailingSubmission();
     });
 
     it('should not be able to submit as all fields required - last name missing', function (done) {
-        setFirstName('Joe');
+        ContactUs_Page.setFirstName('Joe');
         setEmailAddress('Joe.smith@test.com');
         setComments('hello world');
         clickSubmitButton();

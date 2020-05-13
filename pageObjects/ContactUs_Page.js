@@ -11,7 +11,7 @@ class ContactUs_Page {
 }
 
 // functions
-function clickSubmitButton() {
+clickSubmitButton() {
     return this.submitButton.click();
 }
 
@@ -30,7 +30,7 @@ submitAllInformationViaContactUsForm(firstName, lastName, emailAddress, comments
     }
 }
 
-function confirmSuccessfulSubmission() {
+confirmSuccessfulSubmission() {
     var validateSubmissionHeader = browser.waitUntil(function () {
         return this.successfulSubmissionText.getText() == 'Thank You for your Message!'
         console.log('8');
@@ -39,7 +39,7 @@ function confirmSuccessfulSubmission() {
     expect(validateSubmissionHeader, 'Successful submission message does not exist!').to.be.true;
 }
 
-function confirmFailingSubmission() {
+ confirmFailingSubmission() {
     var validateSubmissionHeader = browser.waitUntil(function () {
         return this.failedText.getText() == 'Error: all fields are required'
     }, 3000)
