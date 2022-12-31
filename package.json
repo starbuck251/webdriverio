@@ -21,6 +21,6 @@
   "dependencies": {
     "wdio-json-reporter": "^0.4.0",
     "wdio-junit-reporter": "^0.4.4",
-    "wdio-timeline-reporter": "^4.0.4"
+    "wdio-timeline-reporter": "^5.1.4"
   }
 }
